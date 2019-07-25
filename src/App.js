@@ -1,20 +1,19 @@
 import React from 'react';
-import './App.css';
 
-import About from './Components/Bio/About';
-import LinkContainer from './Components/Bio/LinkContainer';
+import HeaderContainer from './Containers/HeaderContainer';
+import SkillContainer from './Containers/SkillContainer';
+import ProjectContainer from './Containers/ProjectContainer';
+import FooterContainer from './Containers/FooterContainer';
 
-import Skill from './Components/Skills/Skill';
+import './css/index.css';
 
-import Project from './Components/Projects/Project';
-
-function App() {
-  return (
+const App = () => {
+  return(
     <div className="App">
-      <LinkContainer />
-      <About />
-      <Skill />
-      <Project />
+      <HeaderContainer />
+      <SkillContainer />
+      <ProjectContainer />
+      <FooterContainer />
     </div>
   );
 }

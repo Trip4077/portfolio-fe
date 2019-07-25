@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import Link from './Link';
+
 class LinkContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -22,44 +24,7 @@ class LinkContainer extends React.Component {
              });
     }
 
-    render() {
-        return(
-            <div className='link-container'>
-                
-                {this.state.socialInfo.map(social => {
-                    return(
-
-                        <div className='link-box' key={Math.random()}>
-
-                            <a href={social.link}
-                               target='_blank'
-                               rel='noopener noreferrer'
-                               >
-
-                                <img src={social.icon}
-                                 alt={`${social.name} Logo`}
-                                 />
-                            
-                            </a>
-
-                            <a href={social.link} 
-                               target='_blank'
-                               rel="noopener noreferrer"
-                               >
-
-                                <button>
-                                    {social.name}
-                                </button>                            
-                            </a>
-
-                        </div>
-
-                    );
-                })}
-
-            </div>
-        );
-    }
+    render() { return this.state.socialInfo.map(social => <Link social={social} key={Math.random()} />) }
 }
 
 export default LinkContainer;
